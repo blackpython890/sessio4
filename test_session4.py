@@ -182,8 +182,20 @@ def test_notimplementederror_check():
         session4.Qualean(random.choice([-1 , 0 , 1])).__ge__('TSAI')
 
 
+
+#22
+def test_function_exist_check():
+    a = random.uniform(-1,1)
+    assert session4.Qualean.__lt__(a) , "__lt__ is not implementated"
+    assert session4.Qualean.__le__(a) , "__le__ is not implementated"
+    assert session4.Qualean__eq__(a) , "__eq__ is not implemented"
+    assert session4.Qualean__ge__(a) , "__ge__ is not implementated"
+
+
+
+
 '''
-#21
+#23
 def test_100timesadd():
     q = session4.Qualean(random.choice([-1,0,1])
     for i in range(100):
@@ -191,18 +203,18 @@ def test_100timesadd():
     assert sum = 100*q , "Sum Operative Not working"
 
 
-'''
 
 
-'''
+
+
 def test_sqrtcheck_with_Decimal():
     a = random.choice([-1,0,1])
     q = session4.Qualean(a)
     assert q.__sqrt__() == Decimal(a).sqrt() , "session4.Qualean.__sqrt__(a) == Decimal(a).sqrt() returns different value"
-'''
 
 
-'''
+
+
 #9 Less than and equals to
 def test_function_exist_check():
     a = random.uniform(-1,1)
