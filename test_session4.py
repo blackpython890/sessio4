@@ -189,7 +189,7 @@ def test_function_exist_check():
     b = session4.Qualean(random.choice([-1 , 0 , 1]))
     assert a.__lt__(b) , "__lt__ is not implementated"
     assert a.__le__(b) , "__le__ is not implementated"
-    assert a.__eq__(b) , "__eq__ is not implemented"
+    assert a.__eq__(b) , "__gt__ is not implemented"
     assert a.__ge__(b) , "__ge__ is not implementated"
 
 
