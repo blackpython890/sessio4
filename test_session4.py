@@ -173,9 +173,25 @@ def test_sqrt_check():
 
 
 
+#21
+def test_notimplementederror_check():
+    with pytest.raises(NotImplementedError):
+        session4.Qualean(random.choice([-1 , 0 , 1])).__le__('TSAI') 
+        session4.Qualean(random.choice([-1 , 0 , 1])).__lt__('TSAI')
+        session4.Qualean(random.choice([-1 , 0 , 1])).__gt__('TSAI')
+        session4.Qualean(random.choice([-1 , 0 , 1])).__ge__('TSAI')
 
 
+'''
+#21
+def test_100timesadd():
+    q = session4.Qualean(random.choice([-1,0,1])
+    for i in range(100):
+        sum = sum + q
+    assert sum = 100*q , "Sum Operative Not working"
 
+
+'''
 
 
 '''
@@ -184,21 +200,6 @@ def test_sqrtcheck_with_Decimal():
     q = session4.Qualean(a)
     assert q.__sqrt__() == Decimal(a).sqrt() , "session4.Qualean.__sqrt__(a) == Decimal(a).sqrt() returns different value"
 '''
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 '''
@@ -216,6 +217,7 @@ def test_function_exist_check():
     assert session4.Qualean.__add__(a) , "__add__ is not implementated"
     assert session4.Qualean.__mul__(a) , "__mul__ is not implemented"
     assert session4.Qualean.__and__(a) , "__and__ is not implemented"
+
 #10 NotImplementedError Check 
 def test_notimplementederror_check():
     with pytest.raises(NotImplementedError):
