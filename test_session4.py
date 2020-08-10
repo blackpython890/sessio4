@@ -1,6 +1,7 @@
 import pytest , os , session4 , inspect , re , random
 from decimal import Decimal
-
+import math
+import cmath
 
 README_CONTENT_CHECK_FOR = ['__and__' ,
                             '__or__',
@@ -97,15 +98,92 @@ def test_lt_check():
 def test_mul_check():
     q1 = session4.Qualean(random.choice([-1 , 0 , 1]))
     q2 = session4.Qualean(random.choice([-1 , 0 , 1]))
-    assert q1.__mul__(q2)
+    assert q1.__mul__(q2) == q1*q2
 
 
 #11
+def test_add_check():
+    a = session4.Qualean(random.choice([-1 , 0 , 1]))
+    b = session4.Qualean(random.choice([-1 , 0 , 1]))
+    assert a.__add__(b)==a+b
+
+
+#12
+def test_and_check():
+    a = session4.Qualean(random.choice([-1 , 0 , 1]))
+    b = session4.Qualean(random.choice([-1 , 0 , 1]))
+    assert a.__and__(b)==float(a and b)
+
+
+#13
+def test_or_check():
+    a = session4.Qualean(random.choice([-1 , 0 , 1]))
+    b = session4.Qualean(random.choice([-1 , 0 , 1]))
+    assert a.__or__(b) == float(a or b)
+
+
+#14
+def test_bool_check():
+    a = session4.Qualean(random.choice([-1 , 0 , 1]))
+    #b = session4.Qualean(random.choice([-1 , 0 , 1]))
+    assert a.__bool__() == bool(a)
+
+
+#15
+def test_float_check():
+    a = session4.Qualean(random.choice([-1 , 0 , 1]))
+    #b = session4.Qualean(random.choice([-1 , 0 , 1]))
+    assert a.__float__() == float(a)
+
+
+#16
+def test_gt_check():
+    q1 = session4.Qualean(random.choice([-1 , 0 , 1]))
+    q2 = session4.Qualean(random.choice([-1 , 0 , 1]))
+    assert type(q1.__gt__(q2)) is bool
+
+
+#17
+def test_le_check():
+    q1 = session4.Qualean(random.choice([-1 , 0 , 1]))
+    q2 = session4.Qualean(random.choice([-1 , 0 , 1]))
+    assert type(q1.__le__(q2)) is bool
+
+
+#18
+def test_ge_check():
+    q1 = session4.Qualean(random.choice([-1 , 0 , 1]))
+    q2 = session4.Qualean(random.choice([-1 , 0 , 1]))
+    assert type(q1.__ge__(q2)) is bool
+
+
+#19
+def test_eq_check():
+    q1 = session4.Qualean(random.choice([-1 , 0 , 1]))
+    q2 = session4.Qualean(random.choice([-1 , 0 , 1]))
+    assert type(q1.__eq__(q2)) is bool
+
+
+#20
+def test_sqrt_check():
+    a = session4.Qualean(random.choice([-1 , 0 , 1]))
+    #b = session4.Qualean(random.choice([-1 , 0 , 1]))
+    assert a.__sqrt__() == cmath.sqrt(a)
+
+
+
+
+
+
+
+
+
+'''
 def test_sqrtcheck_with_Decimal():
     a = random.choice([-1,0,1])
     q = session4.Qualean(a)
     assert q.__sqrt__() == Decimal(a).sqrt() , "session4.Qualean.__sqrt__(a) == Decimal(a).sqrt() returns different value"
-
+'''
 
 
 
@@ -138,9 +216,6 @@ def test_function_exist_check():
     assert session4.Qualean.__add__(a) , "__add__ is not implementated"
     assert session4.Qualean.__mul__(a) , "__mul__ is not implemented"
     assert session4.Qualean.__and__(a) , "__and__ is not implemented"
-
-
-
 #10 NotImplementedError Check 
 def test_notimplementederror_check():
     with pytest.raises(NotImplementedError):
@@ -156,14 +231,9 @@ def test_notimplementederror_check():
         session4.Qualean.__sqrt__('TSAI')
         session4.Qualean.__mul__('TSAI')
         session4.Qualean.__and__('TSAI')
-
-
-
 #11 Decimal sqrt check with class Qualean
 def test_sqrtcheck_with_Decimal():
     a = random.uniform(-1,1)
     q = session4.Qualean(a)
     assert q.__sqrt__() == Decimal(a).sqrt() , "session4.Qualean.__sqrt__(a) == Decimal(a).sqrt() returns different value"
-
-
 #12'''
