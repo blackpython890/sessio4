@@ -185,11 +185,12 @@ def test_notimplementederror_check():
 
 #22
 def test_function_exist_check():
-    a = random.uniform(-1,1)
-    assert session4.Qualean.__lt__(a) , "__lt__ is not implementated"
-    assert session4.Qualean.__le__(a) , "__le__ is not implementated"
-    assert session4.Qualean__eq__(a) , "__eq__ is not implemented"
-    assert session4.Qualean__ge__(a) , "__ge__ is not implementated"
+    a = session4.Qualean(random.choice([-1 , 0 , 1]))
+    b = session4.Qualean(random.choice([-1 , 0 , 1]))
+    assert a.__lt__(b) , "__lt__ is not implementated"
+    assert a.__le__(b) , "__le__ is not implementated"
+    assert a.__eq__(b) , "__eq__ is not implemented"
+    assert a.__ge__(b) , "__ge__ is not implementated"
 
 
 
