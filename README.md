@@ -41,7 +41,6 @@
 ---
 
 # Author Info
-- Email : [jagatabhay@gmail.com](#jagatabhay@gmail.com)
-- [![Linkedin](https://github.com/jagatabhay/TSAI/blob/master/logo.png)](https://www.linkedin.com/in/jagatnandan-prasad-240042129/)
+-
 
 # End Of Readme
